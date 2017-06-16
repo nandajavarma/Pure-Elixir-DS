@@ -1,0 +1,55 @@
+Data structures from a functional point of view.
+
+Why, you ask?
+    - For the starters, you cannot mutate now, can you?!
+    - Then data structures in functional languages are automatically
+      persistent. That is two versions of the same datastructure
+co-exist at the same time. This is asymptotically less efficient and
+complex, duh!
+
+
+Strict or Lazy:
+    - In strict, the arguments to a function are evaluated before the
+      body of the function is called.
+    - In lazy, it is evaluated in a demand-driven fashion. Also, this
+      value is evaluated and cached for further use. This is called
+Memoization.
+
+
+Some buzz words:
+
+    - Abstract data type: a type and a collection of functions in that
+      type
+24/5/17
+
+
+Persistence
+
+Persistence is maintained by copying the affected nodes and making
+changes to them. The ones that are not changed are shared between
+different versions.
+
+Lists:
+
+stack and lists can be implemented using the inbuilt DS lists and using
+the language constructs like cons and all that. these are the list
+nomenclatures(cons, head, tail)
+
+
+The list concatination function, ++, in an imperative setting can be
+done in O(1) time by maintaining pointers to both the first and last
+cell in each list.
+
+But in a functional setting ,we cannot do this because no mutation. We
+copy the first one and modify tail and then we copy the second onw and
+modify the tail.
+
+In elixir:
+
+def concat([], y), do: y
+
+def concat([x|xs], y) do
+    concate(xs, [x, y])
+end
+
+
