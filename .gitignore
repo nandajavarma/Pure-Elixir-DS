@@ -4,3 +4,7 @@
 erl_crash.dump
 *.ez
 *.beam
+# Swap files (For Vim die hards)
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*~
